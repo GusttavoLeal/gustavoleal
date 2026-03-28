@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gustavo Leal • Portfolio</title>
+
+<link rel="icon" type="image/png" href="imagens/favicon/chip.png">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- DEVICON (Ícones das tecnologias) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<!-- TERMINAL -->
+<div id="terminal">
+    <p id="terminal-text"></p>
+    <span class="cursor">_</span>
+</div>
+
+<!-- MAIN -->
+<div class="container" id="main-content">
+
+<header>
+    <img src="imagens/photos/pro.png" class="profile">
+    <h1>Gustavo Leal</h1>
+    <p class="subtitle">Full Stack Developer</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        Developer focused on modern, performant and visually impactful web applications.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section>
+    <h2>Skills</h2>
+
+    <div class="skills-container">
+
+        <!-- Linguagens -->
+        <div class="skill-category">
+            <h3>Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML</span>
+                </div>
+
+                <div class="skill-item">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS</span>
+                </div>
+
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="skill-item">
+                    <i class="devicon-typescript-plain colored"></i>
+                    <span>TypeScript</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React</span>
+                </div>
+
+                <div class="skill-item">
+                    <i class="devicon-nextjs-plain"></i>
+                    <span>Next.js</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-nodejs-plain colored"></i>
+                    <span>Node.js</span>
+                </div>
+
+                <div class="skill-item">
+                    <i class="devicon-express-original"></i>
+                    <span>Express</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category">
+            <h3>Database</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <span>PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ORM -->
+        <div class="skill-category">
+            <h3>ORM</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-prisma-original"></i>
+                    <span>Prisma</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="skill-category">
+            <h3>DevOps</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-docker-plain colored"></i>
+                    <span>Docker</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="skills-actions">
+        <a href="imagens/curriculo.pdf" target="_blank" class="btn-resume">
+            <i class="fas fa-file-alt"></i> View Resume
+        </a>
+
+        <a href="https://github.com/seuusuario" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3 class="project-title">NoxStride</h3>
+            <p class="project-desc">Modern e-commerce website focused on sneakers and responsive design.</p>
+            <div class="project-images">
+                <img src="imagens/prints/a1.png">
+                <img src="imagens/prints/a2.png">
+                <img src="imagens/prints/a3.png">
+            </div>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">Link Bio Hacker</h3>
+            <p class="project-desc">Interactive link-in-bio with matrix animations and futuristic UI.</p>
+            <div class="project-images">
+                <img src="imagens/projeto2-1.png">
+                <img src="imagens/prints/b1.png">
+                <img src="imagens/projeto2-3.png">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h2>Contact</h2>
+
+    <div class="contact">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+    </div>
+
+    <p>Status: Connected</p>
+</footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span id="close-lightbox">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<script src="script.js"></script>
+<script src="matrix.js"></script>
+
+</body>
+</html>
