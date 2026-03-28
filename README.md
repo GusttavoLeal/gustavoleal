@@ -37,23 +37,14 @@ I am a Full Stack Developer focused on building modern, performant, and visually
 - `matrix.js` — Matrix rain animation
 - `imagens/` — Profile photo, project images, favicons
 
----
-
-## Screenshots
-
-Profile and project images are available in the `imagens/photos` and `imagens/prints` folders.
-
----
+-----
 
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/gusttavoleal/)
-- [Email](mailto:gusttavolealmamedio@gmail.com)
 
-Let's build something great together.
-
----
+- gusttavolealmamedio@gmail.com
 
 ---
 
-<strong>Designed & developed by Gustavo Leal.</strong>
+### <strong>Designed & developed by Gustavo Leal.</strong>
