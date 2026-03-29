@@ -45,10 +45,21 @@ body {
 
 /* HEADER */
 .profile {
-    width: 120px;
+    width: 250px;
     border-radius: 50%;
     border: 2px solid #00ff88;
     margin-bottom: 15px;
+    box-shadow: 0 0 20px #00ff88;
+    animation: neon 1.5s infinite alternate;
+}
+
+@keyframes neon {
+    from {
+        box-shadow: 0 0 10px #00ff88;
+    }
+    to {
+        box-shadow: 0 0 30px #00ff88;
+    }
 }
 
 h1 {
