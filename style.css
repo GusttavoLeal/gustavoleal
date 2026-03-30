@@ -160,7 +160,7 @@ h2 {
 
 /* RESUME - GLASS + NEON */
 .btn-resume {
-    padding: 14px 30px;
+    padding: 10px 22px;
     border-radius: 12px;
 
     color: #00ffcc;
@@ -426,4 +426,39 @@ header {
   50% {
     border-color: transparent;
   }
+}
+
+.btn-github {
+    width: 48px;
+    height: 48px;
+    padding: 0%;
+    background: #0a0a0a;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.6),
+        inset 0 0 10px rgba(255,255,255,0.05);
+
+    transition: 0.3s ease;
+}
+
+.btn-github i {
+    font-size: 20px;
+    color: #ffffff;
+
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+}
+
+/* HOVER MAIS FORTE */
+.github-wrapper:hover .btn-github {
+    transform: translateY(-6px) scale(1.05);
+    background: #242424;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.8),
+        0 0 25px rgba(255,255,255,0.15);
 }
