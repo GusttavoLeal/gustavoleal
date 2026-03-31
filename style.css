@@ -174,11 +174,11 @@ h2 {
 /* ===== BOTÕES PREMIUM ===== */
 
 .skills-actions {
-    margin-top: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
+    flex-direction: column; /* coloca um embaixo do outro */
+    align-items: center;    /* centraliza horizontalmente */
+    gap: 15px;              /* espaço entre botão e ícone */
+    margin-top: 20px;
 }
 
 /* BASE */
