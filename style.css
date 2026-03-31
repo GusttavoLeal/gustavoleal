@@ -38,9 +38,9 @@ body {
 /* MAIN */
 .container {
     display: none;
-    max-width: 900px;
+    max-width: 1400px; /* mais largo */
     margin: auto;
-    padding: 60px 20px;
+    padding: 60px 60px; /* mais espaço lateral */
     text-align: center;
 }
 
