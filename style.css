@@ -48,7 +48,7 @@ body {
 .profile {
     width: 230px;
     border-radius: 50%;
-    border: 2px solid #00ffff;
+    border: 2px solid #00ffcc;
     margin-bottom: 15px;
     animation: neonPulse 2s infinite alternate;
 }
@@ -56,14 +56,14 @@ body {
 @keyframes neonPulse {
     from {
         box-shadow:
-            0 0 10px #00ffff,
-            0 0 20px #00ffff;
+            0 0 10px #00ffcc;
+            0 0 20px   #00ffcc;
     }
     to {
         box-shadow:
-            0 0 20px #00ffff,
-            0 0 40px #00ffff,
-            0 0 60px #00ffff;
+            0 0 20px #00ffcc,
+            0 0 40px #00ffcc,
+            0 0 60px #00ffcc;
     }
 }
 
@@ -87,9 +87,11 @@ h2 {
 /* ===== SKILLS ===== */
 
 .skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px 70px;
+    justify-items: center;
+    margin-top: 30px;
 }
 
 .skill-category {
@@ -97,37 +99,66 @@ h2 {
 }
 
 .skill-category h3 {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     font-family: 'Orbitron';
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 120px);
+    gap: 15px;
     justify-content: center;
-    gap: 25px;
+}
+
+/* Languages 2x2 */
+.skill-category:nth-child(1) .skills-grid {
+    grid-template-columns: repeat(2, 95px);
+}
+
+/* Frontend */
+.skill-category:nth-child(2) .skills-grid {
+    grid-template-columns: 95px;
+}
+
+/* Backend */
+.skill-category:nth-child(3) .skills-grid {
+    grid-template-columns: 95px;
+}
+
+/* Database */
+.skill-category:nth-child(4) .skills-grid {
+    grid-template-columns: 95px;
+}
+
+/* ORM */
+.skill-category:nth-child(5) .skills-grid {
+    grid-template-columns: 95px;
+}
+
+/* DevOps */
+.skill-category:nth-child(6) .skills-grid {
+    grid-template-columns: 95px;
 }
 
 .skill-item {
-    width: 120px;
-    height: 120px;
+    width: 95px;
+    height: 95px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     border: 1px solid rgba(0,255,120,0.2);
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .skill-item i {
-    font-size: 48px;
+    font-size: 34px;
     transition: 0.3s;
 }
 
 .skill-item span {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 .skill-item:hover {
@@ -164,21 +195,15 @@ h2 {
 .btn-resume {
     padding: 10px 20px;
     border-radius: 10px;
-
     font-size: 14px;
     letter-spacing: 0.5px;
-
     color: #00ffcc;
-
     background: rgba(0, 255, 204, 0.06);
     border: 1px solid rgba(0, 255, 204, 0.25);
-
     backdrop-filter: blur(6px);
-
     box-shadow:
         0 0 8px rgba(0, 255, 204, 0.2),
         inset 0 0 6px rgba(0, 255, 204, 0.1);
-
     gap: 6px;
 }
 
@@ -205,14 +230,11 @@ h2 {
 .btn-github {
     width: 44px;
     height: 44px;
-
     background: #050505;
     border-radius: 12px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-shadow:
         0 6px 15px rgba(0,0,0,0.7),
         inset 0 0 6px rgba(255,255,255,0.04);
@@ -229,7 +251,7 @@ h2 {
     margin-top: 6px;
     font-size: 11px;
     letter-spacing: 1px;
-    color: #00ff88; /* mesma cor do site */
+    color: #00ff88;
     transition: 0.25s;
 }
 
@@ -243,7 +265,7 @@ h2 {
 }
 
 .github-wrapper:hover .github-label {
-    color: #00ffcc; /* leve brilho diferente no hover */
+    color: #00ffcc;
 }
 
 /* PROJECTS */
@@ -373,13 +395,8 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 900px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, 100px);
-    }
-
-    .skill-item {
-        width: 100px;
-        height: 100px;
+    .skills-container {
+        grid-template-columns: 1fr;
     }
 }
 
