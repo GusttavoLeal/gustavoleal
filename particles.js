@@ -1,27 +1,26 @@
 let particlesInstance;
 
-// INIT PARTICLES
 tsParticles.load("tsparticles", {
   fullScreen: {
     enable: true,
-    zIndex: -1 // fica no fundo corretamente
+    zIndex: -1
   },
 
   background: {
-    color: "#0a0a0a"
+    color: "#050505"
   },
 
   particles: {
     number: {
-      value: window.innerWidth < 768 ? 40 : 80,
+      value: window.innerWidth < 768 ? 50 : 100,
       density: {
         enable: true,
-        area: 900
+        area: 800
       }
     },
 
     color: {
-      value: ["#ffffff", "#dddddd", "#bbbbbb"]
+      value: "#ffffff"
     },
 
     shape: {
@@ -29,24 +28,35 @@ tsParticles.load("tsparticles", {
     },
 
     opacity: {
-      value: { min: 0.05, max: 0.3 }
+      value: { min: 0.05, max: 0.25 }
     },
 
     size: {
-      value: { min: 0.5, max: 3 }
-    },
-
-    move: {
-      enable: true,
-      speed: 0.3
+      value: { min: 0.5, max: 2 }
     },
 
     links: {
       enable: true,
-      distance: 140,
+      distance: 200,
       color: "#ffffff",
-      opacity: 0.08,
-      width: 1
+      opacity: 0.3,
+      width: 1.2
+    },
+
+    move: {
+      enable: true,
+      speed: 0.15,
+      direction: "none",
+      random: true,
+      straight: false,
+      outModes: {
+        default: "out"
+      },
+      parallax: {
+        enable: true,
+        force: 30,
+        smooth: 10
+      }
     }
   },
 
@@ -54,14 +64,31 @@ tsParticles.load("tsparticles", {
     events: {
       onHover: {
         enable: true,
-        mode: "grab"
+        mode: ["grab", "connect"]
+      },
+      onClick: {
+        enable: true,
+        mode: ["push"]
       }
     },
 
     modes: {
       grab: {
-        distance: 150,
-        links: { opacity: 0.2 }
+        distance: 220,
+        links: {
+          opacity: 0.7
+        }
+      },
+
+      connect: {
+        distance: 160,
+        links: {
+          opacity: 0.5
+        }
+      },
+
+      push: {
+        quantity: 4
       }
     }
   },
@@ -72,7 +99,7 @@ tsParticles.load("tsparticles", {
 });
 
 
-// SCROLL OTIMIZADO (SEM TRAVAR)
+// Scroll Effects
 let ticking = false;
 
 window.addEventListener("scroll", () => {
@@ -83,17 +110,20 @@ window.addEventListener("scroll", () => {
   requestAnimationFrame(() => {
     const scrollY = window.scrollY;
 
-    particlesInstance.options.particles.move.speed = 0.3 + scrollY * 0.0003;
-    particlesInstance.options.particles.opacity.value.max = 0.3 + scrollY * 0.0001;
+    particlesInstance.options.particles.move.speed =
+      0.15 + scrollY * 0.00025;
 
-    particlesInstance.refresh();
+    particlesInstance.options.particles.opacity.value.max =
+      0.25 + scrollY * 0.00005;
+
+    particlesInstance.particles.refresh();
 
     ticking = false;
   });
 });
 
 
-// DARK / LIGHT AUTO
+// Dark / Light mode
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 function updateTheme(e) {
@@ -101,17 +131,16 @@ function updateTheme(e) {
 
   const isDark = e.matches;
 
-  particlesInstance.options.background.color = isDark ? "#0a0a0a" : "#ffffff";
+  particlesInstance.options.background.color =
+    isDark ? "#050505" : "#ffffff";
 
-  particlesInstance.options.particles.color.value = isDark
-    ? ["#ffffff", "#dddddd"]
-    : ["#000000", "#333333"];
+  particlesInstance.options.particles.color.value =
+    isDark ? "#ffffff" : "#000000";
 
-  particlesInstance.options.particles.links.color = isDark
-    ? "#ffffff"
-    : "#000000";
+  particlesInstance.options.particles.links.color =
+    isDark ? "#ffffff" : "#000000";
 
-  particlesInstance.refresh();
+  particlesInstance.particles.refresh();
 }
 
 prefersDark.addEventListener("change", updateTheme);
