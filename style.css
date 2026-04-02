@@ -27,10 +27,11 @@ body {
 
 /* MAIN */
 .container {
-    max-width: 1400px;
-    margin: auto;
-    padding: 60px 60px;
-    text-align: center;
+    max-width: 1400px;   /* Largura máxima do container */
+    margin: 0 auto;      /* Centraliza horizontalmente */
+    padding: 60px;       /* Espaçamento interno uniforme em todos os lados */
+    text-align: center;  /* Centraliza o conteúdo inline */
+    width: 90%;          /* Adapta levemente em telas menores */
 }
 
 /* HEADER */
@@ -181,9 +182,10 @@ h2 {
 }
 
 /* RESUME */
+/* BOTÃO VIEW RESUME PREMIUM */
 .btn-resume {
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 12px 24px;
+    border-radius: 12px;
     font-size: 14px;
     letter-spacing: 0.5px;
     color: #EAEAEA;
@@ -194,24 +196,52 @@ h2 {
         0 0 8px rgba(255,255,255,0.05),
         inset 0 0 6px rgba(255,255,255,0.05);
     gap: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    /* Neon pulse contínuo */
+    animation: neonPulseBtn 2s infinite alternate;
+}
+
+@keyframes neonPulseBtn {
+    from {
+        box-shadow:
+            0 0 10px #EAEAEA,
+            0 0 20px #EAEAEA,
+            inset 0 0 6px rgba(255,255,255,0.1);
+    }
+    to {
+        box-shadow:
+            0 0 20px #EAEAEA,
+            0 0 40px #EAEAEA,
+            inset 0 0 10px rgba(255,255,255,0.2);
+    }
 }
 
 .btn-resume i {
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
+/* HOVER: Glow branco intenso */
 .btn-resume:hover {
-    transform: translateY(-3px);
-
-    background: rgba(255,255,255,0.05);
-
+    transform: translateY(-4px) scale(1.05);
+    background: rgba(255,255,255,0.08);
     box-shadow:
-        0 0 12px rgba(255,255,255,0.25),
-        0 0 25px rgba(255,255,255,0.2);
+        0 0 25px #ffffff,
+        0 0 40px #ffffff,
+        0 0 60px #ffffff,
+        inset 0 0 12px rgba(255,255,255,0.2);
 }
 
 .btn-resume:hover i {
-    filter: drop-shadow(0 0 6px #ffffff);
+    filter: drop-shadow(0 0 12px #ffffff)
+            drop-shadow(0 0 20px #ffffff);
+    color: #ffffff;
 }
 
 /* GITHUB WRAPPER */
@@ -219,48 +249,61 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
 }
 
 /* GITHUB BOTÃO */
 .btn-github {
-    width: 44px;
-    height: 44px;
+    width: 60px;
+    height: 60px;
     background: #050505;
-    border-radius: 12px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow:
         0 6px 15px rgba(0,0,0,0.7),
         inset 0 0 6px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
 }
 
 /* ÍCONE */
 .btn-github i {
-    font-size: 22px;
+    font-size: 28px;
     color: #EAEAEA;
+    transition: all 0.3s ease;
 }
 
 /* TEXTO EMBAIXO */
 .github-label {
-    margin-top: 6px;
-    font-size: 11px;
-    letter-spacing: 1px;
+    font-size: 12px;
+    letter-spacing: 2px;
     color: #EAEAEA;
-    transition: 0.25s;
+    text-shadow: 0 0 4px rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
 }
 
-/* HOVER */
+/* HOVER: Glow branco consistente */
 .github-wrapper:hover .btn-github {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.1);
     background: #0d0d0d;
     box-shadow:
-        0 10px 25px rgba(0,0,0,0.9),
-        0 0 10px rgba(255,255,255,0.05);
+        0 12px 30px rgba(0,0,0,0.9),
+        0 0 15px rgba(255,255,255,0.2),
+        0 0 30px rgba(255,255,255,0.15);
+}
+
+.github-wrapper:hover .btn-github i {
+    filter: drop-shadow(0 0 10px #ffffff)
+            drop-shadow(0 0 20px #ffffff);
+    color: #ffffff;
 }
 
 .github-wrapper:hover .github-label {
-    color: #EAEAEA;
+    text-shadow:
+        0 0 6px #ffffff,
+        0 0 12px #ffffff;
+    color: #ffffff;
 }
 
 /* PROJECTS */
@@ -621,9 +664,11 @@ html {
 
 h2 {
   font-family: 'Inter', sans-serif;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
 
+  margin-bottom: 30px;
+  letter-spacing: 1px;
   color: #EAEAEA;
 
   text-shadow:
@@ -634,18 +679,12 @@ h2 {
   transition: 0.3s;
 }
 
+
 h2:hover {
   text-shadow:
     0 0 6px rgba(255,255,255,0.8),
     0 0 18px rgba(255,255,255,0.6),
     0 0 35px rgba(255,255,255,0.4);
-}
-
-
-h2 {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 30px;
 }
 
 h2::after {
@@ -661,4 +700,40 @@ h2::after {
   box-shadow:
     0 0 6px rgba(255,255,255,0.6),
     0 0 12px rgba(255,255,255,0.4);
+}
+
+
+/* Glow apenas nas letras, mantendo o cursor */
+.typing {
+    font-size: 18px;
+    color: #EAEAEA;
+    margin-top: 10px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #EAEAEA;
+    width: 0;
+    animation: typing 3s steps(22, end) 1s forwards, blink 0.7s infinite;
+    position: relative; /* necessário para o ::after */
+}
+
+/* Pseudo-elemento que cria o glow só nas letras */
+.typing::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: transparent; /* não mostra letras extras */
+    text-shadow: 0 0 6px #ffffff,
+                 0 0 12px #ffffff,
+                 0 0 18px #ffffff;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover: ativa o glow */
+.typing:hover::after {
+    opacity: 1;
 }
