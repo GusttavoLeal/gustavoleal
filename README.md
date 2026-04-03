@@ -48,7 +48,7 @@ I am a passionate Full Stack Developer dedicated to building scalable, high-perf
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 The project follows a modular structure focused on organization, scalability, and maintainability.
 
@@ -72,7 +72,7 @@ project-root/
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ### Root
 
