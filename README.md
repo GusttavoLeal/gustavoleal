@@ -48,18 +48,16 @@ I am a passionate Full Stack Developer dedicated to building scalable, high-perf
 
 ---
 
-## Project Structure
+Project Structure
 
-The project follows a modular and organized structure to improve scalability, maintainability, and code readability.
-
-
+O projeto segue uma estrutura modular e organizada para melhorar escalabilidade, manutenibilidade e legibilidade do código.
 /
 ├── index.html
 ├── css/
-│    └── style.css
+│   └── style.css
 ├── js/
-│    ├── main.js
-│    └── particles.js
+│   ├── main.js
+│   └── particles.js
 ├── portfolio/
 ├── imagens/
 └── README.md
