@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="projectdetails.css">
 
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ICONS -->
@@ -23,11 +22,11 @@
 
 <body>
 
-<canvas id="matrix"></canvas>
+<div id="tsparticles"></div>
 
 <div class="container">
 
-    <h1 class="title">Project Details — Link Bio Futuristic</h1>
+    <h1 class="title">Project Details • Link Bio Futuristic</h1>
 
     <!-- HERO GALLERY -->
     <div class="hero-gallery">
@@ -69,7 +68,7 @@
             </section>
 
             <section id="tech">
-                <h2><i class="fas fa-code"></i> Technologies</h2>
+                <h2><i class="fas fa-laptop-code"></i> Technologies</h2>
 
                 <div class="tech-container">
                     <div class="tech-item">
@@ -87,15 +86,16 @@
                         <span>JavaScript</span>
                     </div>
 
+                
                     <div class="tech-item">
-                        <i class="fa-brands fa-font-awesome"></i>
-                        <span>Font Awesome</span>
+                        <i class="devicon-typescript-plain colored"></i>
+                        <span>TypeScript</span>
                     </div>
 
-                    <div class="tech-item">
-                        <i class="fa-brands fa-google"></i>
-                        <span>Google Fonts</span>
-                    </div>
+                    
+
+                    
+
                 </div>
 
                 <p>The project leverages core front-end technologies to create a visually rich and interactive experience. HTML5 ensures semantic structure, CSS3 enables advanced styling and animations, and JavaScript powers dynamic behavior such as the terminal intro and interactive elements.</p>
@@ -166,55 +166,61 @@
     <img id="lightbox-img">
 </div>
 
+<!-- CDN CORRETO (ANTES DO SCRIPT) -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
 <script>
-/* MATRIX */
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
+/* PARTICLES */
+let particlesInstance;
 
-const letters = "アァカサタナハマヤャラワン0123456789";
-const fontSize = 14;
-let columns = canvas.width / fontSize;
-let drops = [];
+tsParticles.load("tsparticles", {
+  fullScreen: { enable: true, zIndex: -1 },
 
-function initDrops() {
-    columns = canvas.width / fontSize;
-    drops = [];
-    for (let i = 0; i < columns; i++) {
-        drops[i] = 1;
+  background: {
+    color: "#050505"
+  },
+
+  particles: {
+    number: {
+      value: window.innerWidth < 768 ? 50 : 100,
+      density: { enable: true, area: 800 }
+    },
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    opacity: { value: { min: 0.05, max: 0.25 } },
+    size: { value: { min: 0.5, max: 2 } },
+    links: {
+      enable: true,
+      distance: 200,
+      color: "#ffffff",
+      opacity: 0.3,
+      width: 1.2
+    },
+    move: {
+      enable: true,
+      speed: 0.15,
+      random: true,
+      outModes: { default: "out" }
     }
-}
-initDrops();
+  },
 
-function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#00ffcc";
-    ctx.font = fontSize + "px monospace";
-
-    for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-
-        drops[i]++;
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: ["grab", "connect"]
+      },
+      onClick: {
+        enable: true,
+        mode: ["push"]
+      }
     }
-}
+  },
 
-setInterval(drawMatrix, 33);
-
-window.addEventListener("resize", () => {
-    resizeCanvas();
-    initDrops();
+  detectRetina: true
+}, function (container) {
+  particlesInstance = container;
 });
 
 /* GALLERY */
@@ -261,6 +267,7 @@ lightbox.addEventListener("click", (e) => {
         lightbox.classList.remove("active");
     }
 });
+
 </script>
 
 </body>
