@@ -53,12 +53,13 @@ I am a passionate Full Stack Developer dedicated to building scalable, high-perf
 The project follows a modular and organized structure to improve scalability, maintainability, and code readability.
 
 
+/
 ├── index.html
 ├── css/
-│   └── style.css
+│    └── style.css
 ├── js/
-│   ├── main.js
-│   └── particles.js
+│    ├── main.js
+│    └── particles.js
 ├── portfolio/
 ├── imagens/
 └── README.md
