@@ -67,7 +67,7 @@ tsParticles.load("tsparticles", {
         mode: ["grab", "connect"]
       },
       onClick: {
-        enable: true,
+        enable: false,
         mode: ["push"]
       }
     },
